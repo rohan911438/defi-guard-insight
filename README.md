@@ -297,7 +297,13 @@ We welcome contributions from the community! Please see our [Contributing Guide]
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
+
+**Copyright (c) 2025 Rohan Kumar ([@rohan911438](https://github.com/rohan911438))**
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 ## 🙏 Acknowledgments
 
@@ -313,29 +319,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for the DeFi Community**
 
-[Website](https://your-domain.com) • [Documentation](https://docs.your-domain.com) • [Discord](https://discord.gg/your-server) • [Twitter](https://twitter.com/your-handle)
+Created by [Rohan Kumar](https://github.com/rohan911438)
 
 </div>
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4843e2f9-6c7a-4e0b-b3b9-e9c4a0075018) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
