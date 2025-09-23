@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import { NavLink, useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "/", icon: Activity },
-  { name: "Alerts", href: "/alerts", icon: AlertTriangle },
-  { name: "Transaction Graph", href: "/graph", icon: GitBranch },
-  { name: "About", href: "/about", icon: Shield },
+  { name: "Home", href: "/", icon: Activity },
+  { name: "Live Alerts", href: "/alerts", icon: AlertTriangle },
+  { name: "Graph Analysis", href: "/graph", icon: GitBranch },
+  { name: "Project Info", href: "/about", icon: Shield },
 ];
 
 export default function DashboardLayout() {
