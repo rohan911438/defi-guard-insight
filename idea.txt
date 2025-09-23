@@ -1,0 +1,59 @@
+GuardianAI – Real-time DeFi Fraud Detection on U2U
+
+Overview
+GuardianAI is an AI-powered fraud detection system designed to protect decentralized finance (DeFi) ecosystems from real-time exploits. Built on the U2U Network, it leverages DAG-based architecture for near-instant finality and high throughput, making it possible to detect and publish alerts about attacks within seconds. This project combines artificial intelligence, heuristic rules, and immutable on-chain alerts to safeguard Web3 finance.
+
+Problem Statement
+DeFi has unlocked open, permissionless finance but also exposed users and protocols to sophisticated attacks. Exploits such as flash-loan price manipulation, oracle attacks, rug pulls, sandwich attacks (MEV), and wash trading have stolen billions of dollars from users.
+These attacks happen in seconds, making them difficult to detect and respond to in time. Existing monitoring systems are often too slow, limited to manual investigation, or fail to integrate seamlessly with protocols. The result is repeated loss of user funds, loss of trust, and slower adoption of Web3 applications.
+
+Solution
+GuardianAI provides a real-time fraud detection and alerting system powered by AI. It ingests data directly from the U2U mempool and blockchain, extracts meaningful features, and applies a hybrid detection stack:
+- Heuristic detectors for flash loans, suspicious token launches, and abnormal trades.
+- Machine learning classifiers (XGBoost, neural networks, graph models) to identify suspicious wallets and unusual transaction patterns.
+- Anomaly detection modules to flag zero-day exploits.
+
+When an exploit is detected, GuardianAI issues a risk score and detailed evidence. Alerts are published to an on-chain AlertRegistry contract deployed on the U2U network. This ensures immutability, transparency, and interoperability with DeFi protocols, which can automatically or manually take protective actions such as pausing contracts or rejecting suspicious transactions.
+
+Key Features
+1. Real-time monitoring of mempool and on-chain transactions.
+2. AI-powered classification of suspicious patterns.
+3. Graph visualization of token flows and malicious wallets.
+4. Immutable on-chain alert publishing via U2U AlertRegistry.
+5. REST API for developers and dashboards for users.
+6. Go-to-market support with integration hooks for DeFi protocols.
+
+How It Works
+1. Ingestion: GuardianAI listens to mempool events and confirmed transactions on U2U.
+2. Detection: Features are extracted and scored with AI models. Heuristics provide high-precision quick checks.
+3. Alerting: Alerts are signed off-chain and published to the AlertRegistry smart contract on U2U.
+4. Visualization: A frontend dashboard shows live alerts, severity, explanations, and a transaction graph.
+
+Technical Architecture
+- Backend: Python (FastAPI, web3.py, XGBoost, PyTorch).
+- On-chain: Solidity smart contract (AlertRegistry) deployed on U2U EVM.
+- Frontend: React + Tailwind (Lovable for rapid UI prototyping).
+- Data: Redis for caching, NetworkX/Neo4j for graph analysis, labeled datasets for ML training.
+
+Benefits of U2U
+- DAG-based consensus for high throughput and low latency.
+- Near-instant finality critical for real-time fraud detection.
+- EVM compatibility for smooth deployment of smart contracts.
+- Scalable infrastructure to support streaming analysis and rapid response.
+
+Impact
+GuardianAI enhances user trust and protocol security by giving the ecosystem a proactive defense layer. By detecting exploits before or during execution, it minimizes fund losses, improves resilience, and helps DeFi protocols comply with best practices. For builders, it offers a plug-and-play fraud detection layer. For users, it offers peace of mind when interacting with DeFi.
+
+Hackathon Deliverables
+1. Backend detector with heuristic + ML model for flash-loan exploit detection.
+2. AlertRegistry smart contract deployed on U2U testnet.
+3. Dashboard showing real-time alerts with severity and visual graphs.
+4. Demo video simulating a flash-loan exploit and showing GuardianAI detection end-to-end.
+5. Documentation and pitch deck.
+
+Future Vision
+- Expand AI coverage to more exploit types and cross-chain activity.
+- Integrate anomaly scoring for new, unseen attack vectors.
+- Offer GuardianAI as an API and SDK for DeFi protocols.
+- Develop DAO-driven governance for community-verified alerts.
+- Grow into a full-fledged security layer for Web3 finance.

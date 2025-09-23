@@ -1,33 +1,27 @@
-import { X, Copy, ExternalLink, AlertTriangle, Clock, Hash, TrendingUp } from "lucide-react";
+import { X, Copy, ExternalLink, AlertTriangle, Clock, Hash, TrendingUp, Shield, Brain, Zap, Search, FileText, Users, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
-
-type Alert = {
-  id: string;
-  txHash: string;
-  severity: "Low" | "Medium" | "High" | "Critical";
-  riskScore: number;
-  timestamp: Date;
-  pattern?: string;
-  explanation?: string;
-};
+import { Alert } from "@/types";
+import { motion, AnimatePresence } from "framer-motion";
 
 const severityConfig = {
-  Critical: { color: "bg-destructive text-destructive-foreground", bgClass: "bg-destructive/10" },
-  High: { color: "bg-danger text-danger-foreground", bgClass: "bg-danger/10" },
-  Medium: { color: "bg-warning text-warning-foreground", bgClass: "bg-warning/10" },
-  Low: { color: "bg-success text-success-foreground", bgClass: "bg-success/10" },
+  Low: { color: "bg-blue-100 text-blue-800 border-blue-200" },
+  Medium: { color: "bg-yellow-100 text-yellow-800 border-yellow-200" },
+  High: { color: "bg-orange-100 text-orange-800 border-orange-200" },
+  Critical: { color: "bg-red-100 text-red-800 border-red-200" }
 };
 
 const mockFeatures = [
-  { name: "Transaction Amount", value: "1,250.5 U2U", impact: "High" },
-  { name: "Gas Usage Pattern", value: "Unusual", impact: "Medium" },
-  { name: "Contract Age", value: "2 days", impact: "High" },
-  { name: "Liquidity Ratio", value: "0.23", impact: "Critical" },
-  { name: "Time Between Txs", value: "< 1 block", impact: "High" },
+  { name: "Transaction Velocity", value: "95th percentile", impact: "High" },
+  { name: "Gas Price Anomaly", value: "300% above average", impact: "Medium" },
+  { name: "Wallet Age", value: "< 24 hours", impact: "High" },
+  { name: "Contract Similarity", value: "89% match to known exploits", impact: "Critical" }
 ];
 
 interface AlertDetailsPanelProps {
