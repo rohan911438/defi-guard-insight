@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils";
 import { NavLink, useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "/", icon: Activity },
-  { name: "Alerts", href: "/alerts", icon: AlertTriangle },
-  { name: "Transaction Graph", href: "/graph", icon: GitBranch },
-  { name: "Analytics", href: "/analytics", icon: BarChart3 },
-  { name: "Settings", href: "/settings", icon: Settings },
-  { name: "About", href: "/about", icon: Shield },
+  { name: "Dashboard", href: "/dashboard", icon: Activity },
+  { name: "Alerts", href: "/dashboard/alerts", icon: AlertTriangle },
+  { name: "Transaction Graph", href: "/dashboard/graph", icon: GitBranch },
+  { name: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
+  { name: "Settings", href: "/dashboard/settings", icon: Settings },
+  { name: "About", href: "/dashboard/about", icon: Shield },
 ];
 
 export default function DashboardLayout() {
