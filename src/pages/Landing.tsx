@@ -287,7 +287,7 @@ export default function Landing() {
       name: "Alexandra Chen",
       role: "Senior DeFi Trader",
       company: "Paradigm Capital",
-      content: "DeFi Guard Insight's AI threat detection saved our fund from a sophisticated flash loan attack. The platform detected the anomaly 23 seconds before execution, allowing us to exit our positions safely. This is genuinely the future of DeFi security.",
+      content: "GuardianAI's advanced threat detection saved our fund from a sophisticated flash loan attack. The platform detected the anomaly 23 seconds before execution, allowing us to exit our positions safely. This is genuinely the future of DeFi security.",
       rating: 5,
       avatar: "AC",
       portfolio: "$50M+",
@@ -387,7 +387,7 @@ export default function Landing() {
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
               </div>
               <div>
-                <span className="text-2xl font-bold text-white">DeFi Guard Insight</span>
+                <span className="text-2xl font-bold text-white">GuardianAI</span>
                 <div className="text-xs text-purple-300">AI-Powered Security</div>
               </div>
             </div>
@@ -688,7 +688,7 @@ export default function Landing() {
               Trusted by DeFi Leaders
             </h2>
             <p className="text-xl text-slate-300">
-              See how DeFi Guard Insight is protecting portfolios and preventing losses worldwide
+              See how GuardianAI is protecting portfolios and preventing losses worldwide
             </p>
           </div>
           
@@ -834,7 +834,7 @@ export default function Landing() {
             Start Protecting Your DeFi Future Today
           </h2>
           <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-            Join 75,000+ users who trust DeFi Guard Insight to secure their investments. 
+            Join 75,000+ users who trust GuardianAI to secure their investments. 
             Get started with our free plan or try Guardian Pro risk-free for 14 days.
           </p>
           
@@ -882,7 +882,7 @@ export default function Landing() {
               <div className="flex items-center space-x-3 mb-6">
                 <Shield className="h-8 w-8 text-purple-400" />
                 <div>
-                  <span className="text-xl font-bold text-white">DeFi Guard Insight</span>
+                  <span className="text-xl font-bold text-white">GuardianAI</span>
                   <div className="text-xs text-purple-300">AI-Powered Security</div>
                 </div>
               </div>
@@ -937,7 +937,7 @@ export default function Landing() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
               <p className="text-slate-400">
-                © 2025 DeFi Guard Insight. All rights reserved.
+                © 2025 GuardianAI. All rights reserved.
               </p>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
