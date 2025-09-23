@@ -312,32 +312,94 @@ export default function Dashboard() {
         </CardContent>
       </Card>
 
-      {/* Quick Actions */}
-      <Card className="bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg">
-        <CardHeader>
-          <CardTitle>Quick Actions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <Button variant="secondary" className="w-full bg-white text-blue-600 hover:bg-gray-100">
-              <AlertTriangle className="w-4 h-4 mr-2" />
-              View All Alerts
-            </Button>
-            <Button variant="secondary" className="w-full bg-white text-purple-600 hover:bg-gray-100">
-              <BarChart3 className="w-4 h-4 mr-2" />
-              Analytics Dashboard
-            </Button>
-            <Button variant="secondary" className="w-full bg-white text-green-600 hover:bg-gray-100">
-              <Network className="w-4 h-4 mr-2" />
-              Network Monitor
-            </Button>
-            <Button variant="secondary" className="w-full bg-white text-orange-600 hover:bg-gray-100">
-              <Shield className="w-4 h-4 mr-2" />
-              Security Reports
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Live Activity and Quick Actions */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Live Activity Feed */}
+        <div className="lg:col-span-2">
+          <Card className="bg-white shadow-lg">
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Activity className="mr-2 h-5 w-5 text-blue-500" />
+                Live Activity Feed
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
+                  <AlertTriangle className="w-5 h-5 text-red-500" />
+                  <div className="flex-1">
+                    <div className="font-medium text-red-800">Critical Alert: Flash Loan Attack</div>
+                    <div className="text-sm text-red-600">TX: 0x1234...5678 • 30 seconds ago</div>
+                  </div>
+                  <Badge className="bg-red-100 text-red-800">CRITICAL</Badge>
+                </div>
+
+                <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border-l-4 border-green-500">
+                  <Shield className="w-5 h-5 text-green-500" />
+                  <div className="flex-1">
+                    <div className="font-medium text-green-800">Threat Blocked: Malicious Contract</div>
+                    <div className="text-sm text-green-600">Contract: 0xabcd...efgh • 2 minutes ago</div>
+                  </div>
+                  <Badge className="bg-green-100 text-green-800">BLOCKED</Badge>
+                </div>
+
+                <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                  <Activity className="w-5 h-5 text-blue-500" />
+                  <div className="flex-1">
+                    <div className="font-medium text-blue-800">High Volume Transaction</div>
+                    <div className="text-sm text-blue-600">Value: $2.5M U2U • 5 minutes ago</div>
+                  </div>
+                  <Badge className="bg-blue-100 text-blue-800">MONITORED</Badge>
+                </div>
+
+                <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                  <Eye className="w-5 h-5 text-yellow-500" />
+                  <div className="flex-1">
+                    <div className="font-medium text-yellow-800">Suspicious Pattern Detected</div>
+                    <div className="text-sm text-yellow-600">Wallet: 0x9876...4321 • 8 minutes ago</div>
+                  </div>
+                  <Badge className="bg-yellow-100 text-yellow-800">WATCHING</Badge>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Quick Actions */}
+        <Card className="bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-lg">
+          <CardHeader>
+            <CardTitle className="text-white">Quick Actions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <Button variant="secondary" className="w-full bg-white text-blue-600 hover:bg-gray-100 justify-start">
+                <AlertTriangle className="w-4 h-4 mr-2" />
+                View All Alerts
+              </Button>
+              <Button variant="secondary" className="w-full bg-white text-purple-600 hover:bg-gray-100 justify-start">
+                <BarChart3 className="w-4 h-4 mr-2" />
+                Analytics Dashboard
+              </Button>
+              <Button variant="secondary" className="w-full bg-white text-green-600 hover:bg-gray-100 justify-start">
+                <Network className="w-4 h-4 mr-2" />
+                Network Monitor
+              </Button>
+              <Button variant="secondary" className="w-full bg-white text-orange-600 hover:bg-gray-100 justify-start">
+                <Shield className="w-4 h-4 mr-2" />
+                Security Reports
+              </Button>
+
+              <div className="pt-4 mt-4 border-t border-white/20">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">94.2%</div>
+                  <div className="text-sm text-white/80">System Accuracy</div>
+                  <Progress value={94.2} className="w-full h-2 mt-2 bg-white/20" />
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
