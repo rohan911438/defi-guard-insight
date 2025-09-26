@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Separator } from '../components/ui/separator';
+import { WalletConnection } from '../components/ui/WalletConnection';
+import { useWalletContext } from '../hooks/useWallet';
 import { 
   Shield, 
   TrendingUp, 
@@ -52,9 +54,15 @@ import { useNavigate } from 'react-router-dom';
 export default function Landing() {
   const navigate = useNavigate();
   const [activeDemo, setActiveDemo] = useState('dashboard');
+  const { isConnected } = useWalletContext();
 
   const handleSignUp = () => {
-    navigate("/dashboard");
+    if (isConnected) {
+      navigate("/dashboard");
+    } else {
+      // Wallet connection will be handled by WalletConnection component
+      // After connection, user can manually navigate to dashboard
+    }
   };
 
   const coreFeatures = [
@@ -399,9 +407,16 @@ export default function Landing() {
               <Button variant="outline" className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white">
                 Sign In
               </Button>
-              <Button onClick={handleSignUp} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 font-semibold">
-                Get Started Free
-              </Button>
+              {isConnected ? (
+                <div className="flex items-center gap-4">
+                  <WalletConnection variant="header" showBalance={false} />
+                  <Button onClick={handleSignUp} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 font-semibold">
+                    Go to Dashboard
+                  </Button>
+                </div>
+              ) : (
+                <WalletConnection variant="header" />
+              )}
             </nav>
           </div>
         </div>
@@ -429,14 +444,21 @@ export default function Landing() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Button 
-              onClick={handleSignUp}
-              size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-10 py-4 font-semibold text-white shadow-2xl"
-            >
-              Start Free Trial
-              <ArrowRight className="ml-3 h-6 w-6" />
-            </Button>
+            {isConnected ? (
+              <Button 
+                onClick={handleSignUp}
+                size="lg" 
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-10 py-4 font-semibold text-white shadow-2xl"
+              >
+                Launch Dashboard
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Button>
+            ) : (
+              <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <WalletConnection />
+                <span className="text-slate-400">Connect wallet to get started</span>
+              </div>
+            )}
             <Button 
               variant="outline" 
               size="lg" 
@@ -789,13 +811,17 @@ export default function Landing() {
                     <div className="text-xs text-slate-400 text-center">{plan.limits}</div>
                   </div>
                   
-                  <Button 
-                    onClick={handleSignUp}
-                    className={`w-full ${plan.popular ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700' : 'bg-slate-700 hover:bg-slate-600'} font-semibold`}
-                    size="lg"
-                  >
-                    {plan.cta}
-                  </Button>
+                  {isConnected ? (
+                    <Button 
+                      onClick={handleSignUp}
+                      className={`w-full ${plan.popular ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700' : 'bg-slate-700 hover:bg-slate-600'} font-semibold`}
+                      size="lg"
+                    >
+                      {plan.cta}
+                    </Button>
+                  ) : (
+                    <WalletConnection />
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -839,14 +865,21 @@ export default function Landing() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <Button 
-              onClick={handleSignUp}
-              size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-xl px-12 py-4 font-semibold shadow-2xl"
-            >
-              Start Free Trial
-              <ArrowRight className="ml-3 h-6 w-6" />
-            </Button>
+            {isConnected ? (
+              <Button 
+                onClick={handleSignUp}
+                size="lg" 
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-xl px-12 py-4 font-semibold shadow-2xl"
+              >
+                Launch Dashboard
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Button>
+            ) : (
+              <div className="flex flex-col items-center gap-4">
+                <WalletConnection />
+                <p className="text-white/70 text-sm">Connect your wallet to start protecting your DeFi investments</p>
+              </div>
+            )}
             <Button 
               variant="outline" 
               size="lg" 

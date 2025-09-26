@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { NavLink, useLocation } from "react-router-dom";
+import { WalletConnection } from "@/components/ui/WalletConnection";
+import { useWalletContext } from "@/hooks/useWallet";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: Activity },
@@ -18,6 +20,7 @@ const navigation = [
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
+  const { isConnected } = useWalletContext();
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,13 +49,14 @@ export default function DashboardLayout() {
             </div>
             
             <div className="flex items-center space-x-4">
-              <div className="relative max-w-md">
+              <div className="relative max-w-md hidden md:block">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search transactions, alerts..."
                   className="pl-10 w-64"
                 />
               </div>
+              <WalletConnection variant="compact" />
             </div>
           </div>
         </div>
