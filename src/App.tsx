@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WalletProvider } from "@/hooks/useWallet";
 import DashboardLayout from "./components/layout/DashboardLayout";
+import MLConsole from '@/pages/MLConsole';
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import Alerts from "./pages/Alerts";
@@ -33,6 +34,7 @@ const App = () => (
               <Route path="alerts" element={<Alerts />} />
               <Route path="graph" element={<TransactionGraphPage />} />
               <Route path="analytics" element={<Analytics />} />
+              <Route path="ml" element={<MLConsole />} />
               <Route path="settings" element={<Settings />} />
               <Route path="about" element={<About />} />
             </Route>

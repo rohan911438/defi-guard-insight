@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Shield, Activity, AlertTriangle, GitBranch, BarChart3, Settings, Search, Menu, X } from "lucide-react";
+import { Shield, Activity, AlertTriangle, GitBranch, BarChart3, Settings, Search, Menu, X, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -13,6 +13,7 @@ const navigation = [
   { name: "Alerts", href: "/dashboard/alerts", icon: AlertTriangle },
   { name: "Transaction Graph", href: "/dashboard/graph", icon: GitBranch },
   { name: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
+  { name: "ML Console", href: "/dashboard/ml", icon: Brain },
   { name: "Settings", href: "/dashboard/settings", icon: Settings },
   { name: "About", href: "/dashboard/about", icon: Shield },
 ];
