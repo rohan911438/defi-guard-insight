@@ -1,23 +1,3 @@
-## 📝 Smart Contract Integration & Next Steps
-
-This project is ready for on-chain integration, but contract deployment is not required for demo or hackathon submission. All core features (UI, analytics, ML simulation) work without contract deployment.
-
-### How to Enable On-Chain Features
-
-1. Deploy the provided Solidity contracts (in `contracts/`) using Remix, Hardhat, or Foundry.
-2. Copy the deployed contract address and ABI from your deployment tool.
-3. Add them to the frontend integration points (see `src/lib/contract.ts` or follow the comments in the code).
-
-If contracts are not deployed, the UI will show "On-chain features coming soon" or similar placeholders.
-
-### Next Steps for Full Integration
-
-1. Deploy contracts to a testnet or mainnet.
-2. Add contract addresses/ABIs to the frontend.
-3. Update the UI to enable on-chain features.
-
----
-For any questions or integration help, see the code comments or contact the project maintainer.
 # GuardianAI - Real-time DeFi Fraud Detection System
 
 <div align="center">
